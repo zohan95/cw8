@@ -3,22 +3,63 @@
 {% block title %}{{ product.name }}{% endblock %}
 {% block menu %}
     <li class="nav-item active">
-                    <a class="nav-link font-italic" href="{% url 'webapp:product_edit_url' product.pk %}">Изменить</a>
-                </li>
+        <a class="nav-link font-italic" href="{% url 'webapp:product_edit_url' product.pk %}">Изменить</a>
+    </li>
     <li class="nav-item active">
-                    <a class="nav-link font-italic text-danger" href="{% url 'webapp:product_delete_url' product.pk %}">Удалить</a>
-                </li>
+        <a class="nav-link font-italic text-danger" href="{% url 'webapp:product_delete_url' product.pk %}">Удалить</a>
+    </li>
 {% endblock %}
 {% block content %}
     <div class="text-center">
         <h1>{{ product.name }}</h1>
         <div class="row">
             <div class="col col-12 col-sm-10 col-md-8 col-lg-6 m-auto">
-                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'blank.png' %}{% endif %}" class="img-fluid" alt="{{ product.name }}">
+                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'blank.png' %}{% endif %}"
+                     class="img-fluid" alt="{{ product.name }}">
             </div>
         </div>
         <p><b>Категория:</b> {{ product.get_category_display }}</p>
         <P><b>Описание:</b>{{ product.description }}</P>
+        <p><b>Средняя оценка:</b>{{ mid_mark }}</p>
+    </div>
 
+    <div class="card-1 mt-2">
+        <div class="container">
+            <a href="{% url 'webapp:review_create_url' product.pk %}" class="btn btn-success">Оставить отзыв</a>
+{#            <form action="{% url 'webapp:review_create_url' product.pk %}" method="post">#}
+{#                {% csrf_token %}#}
+{##}
+{#                {% for error in form1.non_field_errors %}#}
+{#                    <p class="form-error">{{ error }}</p>#}
+{#                {% endfor %}#}
+{##}
+{#                {% for field in form1 %}#}
+{#                    <p><label for="{{ field.id_for_label }}">{{ field.label }}</label></p>#}
+{#                    <p>{{ field }}</p>#}
+{#                    {% for error in field.errors %}#}
+{#                        <p class="form-error">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                {% endfor %}#}
+{##}
+{#                <p><input type="submit" value="Оставить отзыв"></p>#}
+{#            </form>#}
+        </div>
+    </div>
+    <div class="card-1 mt-3">
+        <div class="container">
+            <h3>Отзывы:</h3>
+
+            {% for i in product.review_product.all %}
+                <div style="margin-top: 20px;border: 1px solid darkgray; border-radius: 5px;padding: 15px;">
+
+                    <p>Author: {{ i.author }}</p>
+                    <p>EMAIL: {{ i.author.email }}</p>
+                    <p>TEXT: {{ i.review_text }}</p>
+                    <p>MARK: {{ i.mark }}</p>
+                    <a href="{% url 'webapp:review_edit_url' i.pk %}" class="btn btn-outline-secondary">edit</a>
+                    <a href="{% url 'webapp:review_delete_url' i.pk product.id %}" class="btn btn-outline-danger">delete</a>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
