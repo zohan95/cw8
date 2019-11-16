@@ -1,3 +1,5 @@
+from math import modf
+
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
@@ -29,7 +31,9 @@ class Product(models.Model):
             mid_rate += i.mark
         if mid_rate:
             mid_rate = mid_rate / len(review)
-        return '{:.2f}'.format(mid_rate)
+        a, b = modf(mid_rate)
+        print(a)
+        return a, range(int(b))
 
 
 class Review(models.Model):
@@ -42,3 +46,7 @@ class Review(models.Model):
                                            MaxValueValidator(5),
                                            MinValueValidator(1)
                                        ])
+
+    @property
+    def get_range(self):
+        return range(self.mark)
