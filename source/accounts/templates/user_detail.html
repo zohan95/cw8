@@ -20,7 +20,7 @@
                     <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="250" height="250"
                          alt="user picture">
                 {% else %}
-                     <img class="avatar" src="{% static 'image/blank.jpg' %}" width="250" height="250"
+                    <img class="avatar" src="{% static 'image/blank.jpg' %}" width="250" height="250"
                          alt="user picture">
                 {% endif %}
             </div>
@@ -36,9 +36,19 @@
                 <p>Почта: {{ user_obj.email }}</p>
 
                 <p>О себе: {{ user_obj.profile.about|default:'(Пусто)' }}</p>
-
-                <p>Github: {{ user_obj.profile.git_hub|default:'(Пусто)' }}</p>
             </div>
+
+        </div>
+
+    </div>
+    <div class="container">
+    <div class="card-1">
+
+            {% for i in reviews %}
+                <div style="border: 1px solid darkgray; border-radius: 5px; margin-top: 15px; padding: 15px;">
+                <p>TEXT: {{ i.review_text }}</p>
+                <p>MARK: {{ i.mark }}</p></div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

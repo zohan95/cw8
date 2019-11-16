@@ -52,7 +52,7 @@
             {% for i in product.review_product.all %}
                 <div style="margin-top: 20px;border: 1px solid darkgray; border-radius: 5px;padding: 15px;">
 
-                    <p>Author: {{ i.author }}</p>
+                    <p>Author: <a href="{% url 'accounts:detail' i.author.pk %}">{{ i.author }}</a></p>
                     <p>EMAIL: {{ i.author.email }}</p>
                     <p>TEXT: {{ i.review_text }}</p>
                     <p>MARK: {{ i.mark }}</p>
