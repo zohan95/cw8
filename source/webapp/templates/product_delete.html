@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container card card-1 text-center mt-5 py-5">
+        <h3>Вы точно хотите удалить?</h3>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">ДА</button>
+            <a href="{% url 'webapp:main_url' %}" class="btn btn-primary">НЕТ</a>
+        </form>
+    </div>
+{% endblock %}
