@@ -1,22 +1,92 @@
 [
-  {
-    "model": "webapp.product",
-    "pk": 1,
-    "fields": {
-      "name": "apple",
-      "category": "fruits",
-      "description": "asd",
-      "image": "product_images/index_GDeE04y.png"
-    }
-  },
-  {
-    "model": "webapp.review",
-    "pk": 1,
-    "fields": {
-      "author": 1,
-      "product": 1,
-      "review_text": "asdsad",
-      "mark": 5
-    }
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "apple2",
+    "category": "wear",
+    "description": "asd",
+    "image": "product_images/index_GDeE04y.png"
   }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "asnd,sad",
+    "category": "wear",
+    "description": "sadlflkew",
+    "image": "product_images/image-512.png"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "name": "asnd,sad",
+    "category": "wear",
+    "description": "sadlflkew",
+    "image": "product_images/image-512_4edVKtj.png"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 6,
+  "fields": {
+    "name": "lksafdlkadsa",
+    "category": "other",
+    "description": "",
+    "image": ""
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 5,
+  "fields": {
+    "author": 2,
+    "product": 1,
+    "review_text": "sadmsad",
+    "mark": 5
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 6,
+  "fields": {
+    "author": 2,
+    "product": 1,
+    "review_text": "ololo23",
+    "mark": 5
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 7,
+  "fields": {
+    "author": 2,
+    "product": 1,
+    "review_text": "lohoper",
+    "mark": 5
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 11,
+  "fields": {
+    "author": 2,
+    "product": 3,
+    "review_text": "\u044b\u0444\u0432",
+    "mark": 5
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 12,
+  "fields": {
+    "author": 2,
+    "product": 1,
+    "review_text": "sadasd",
+    "mark": 5
+  }
+}
 ]
