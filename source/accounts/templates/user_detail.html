@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ user_obj.username }}{% endblock %}
+{% block menu %}
+    {% if user_obj == request.user %}
+        <li class="nav-item active"><a href="{% url "accounts:user_update" user_obj.pk %}" class="nav-link">Edit
+            Profile</a></li>
+        <li class="nav-item active"><a href="{% url 'accounts:user_change_password' user_obj.pk %}" class="nav-link">Change
+            Password</a></li>
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <div class="container card-1 mt-2">
+
+        <h1>Личный кабинет</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                {% if user_obj.profile.avatar %}
+
+                    <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="250" height="250"
+                         alt="user picture">
+                {% else %}
+                     <img class="avatar" src="{% static 'image/blank.jpg' %}" width="250" height="250"
+                         alt="user picture">
+                {% endif %}
+            </div>
+            <div class="col-sm-8">
+                <p>Имя пользователя: {{ user_obj.username }}</p>
+
+                <p>Имя: {{ user_obj.first_name }}</p>
+
+                <p>Фамилия: {{ user_obj.last_name }}</p>
+
+                <p>Дата рождения: {{ user_obj.profile.birth_date|date:'d.m.Y' }}</p>
+
+                <p>Почта: {{ user_obj.email }}</p>
+
+                <p>О себе: {{ user_obj.profile.about|default:'(Пусто)' }}</p>
+
+                <p>Github: {{ user_obj.profile.git_hub|default:'(Пусто)' }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

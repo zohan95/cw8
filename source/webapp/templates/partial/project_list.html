@@ -1,0 +1,16 @@
+<div class="col-sm-4 my-2">
+    <div class="card card-1 ">
+        <div id="question_text_{{ i.pk }}">
+            <div class="card-body">
+                <p class="card-text">{{ i.summary }}</p>
+                <hr>
+                <p class="card-text">{{ i.description }}</p>
+                <hr>
+                <a href="{% url 'webapp:project_details_url' i.pk %}" class="btn btn-primary">Детали</a>
+                <a href="{% url 'webapp:project_edit_url' i.pk %}"
+                   class="btn btn-success">Изменить</a>
+                <a href="{% url 'webapp:project_delete_url' i.pk %}" class="btn btn-danger">X</a>
+            </div>
+        </div>
+    </div>
+</div>

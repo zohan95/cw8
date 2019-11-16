@@ -1,0 +1,14 @@
+{% csrf_token %}
+{% for field in form %}
+    <div class="form-group container">
+        {% if field.errors %}
+            <div class="alert alert-danger">
+                {{ field.errors }}
+            </div>
+        {% endif %}
+        {{ field.label }}
+        <br/>
+        {{ field }}
+    </div>
+{% endfor %}
+<button type="submit" class="btn btn-success ml-3 mb-5">{{ button_text }}</button>

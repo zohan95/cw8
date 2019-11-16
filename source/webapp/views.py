@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from django.views import View
 
-# Create your views here.
+
+class ProductList(View):
+    def get(self, *args, **kwargs):
+        return render(self.request, 'base.html')

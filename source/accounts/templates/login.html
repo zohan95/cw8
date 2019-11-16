@@ -1,0 +1,41 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Document</title>
+</head>
+<body class="login-body">
+<h3 class="text-white ml-2"><a href="{% url 'webapp:main_url' %}" class=" text-reset">&lsaquo; Back to main</a></h3>
+
+<div class="card-2 text-center" style="width: 500px; margin-top: 10%; margin-left: 55%">
+    <h1 class="text-center mt-5 text-white font-weight-bold">Вход</h1>
+    <form action="{% url 'accounts:login' %}" method="post" class="text-center">
+        {% csrf_token %}
+        {% if has_error %}
+            <p class="form-error" style="color: red; background-color: rgba(255,255,255,0.5); border:1px solid red; border-radius: 2px;">Неверное имя пользователя или пароль.</p>
+        {% endif %}
+        <p><label for="username" class="form-label text-white font-weight-bold">Имя пользователя:</label></p>
+        <p><input type="text" name="username" id="username" autofocus style="width: 300px"></p>
+        <p><label for="password" class="form-label text-white font-weight-bold">Пароль:</label></p>
+        <p><input type="password" name="password" id="password" style="width: 300px"></p>
+        <button type="submit" class="login-button">Войти</button>
+        <a href="{% url 'accounts:register' %}" class="ml-4 text-white font-weight-bold">Регистрация</a>
+    </form>
+</div>
+
+</body>
+</html>
+
+
+
+
+

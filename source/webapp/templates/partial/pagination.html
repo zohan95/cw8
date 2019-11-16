@@ -1,0 +1,48 @@
+<div class="container text-center mt-5">
+    <form action="" method="GET">
+        <a href="?{% if query %}{{ query }}&{% endif %}page=1" class="btn btn-primary">&laquo; В начало</a>
+
+        {% if page_obj.has_previous %}
+            <a href="?{% if query %}{{ query }}&{% endif %}page={{ page_obj.previous_page_number }}"
+               class="btn btn-outline-info mx-1">Назад</a>
+        {% else %}
+            <span class="btn btn-light disabled mx-1">Назад</span>
+        {% endif %}
+
+        <span class="current">
+
+            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?{% if query %}{{ query }}&{% endif %}page={{ page_obj.next_page_number }}"
+               class="btn btn-outline-info">Далее</a>
+        {% else %}
+            <span class="btn btn-light disabled ml-1">Далее</span>
+        {% endif %}
+
+        <a href="?{% if query %}{{ query }}&{% endif %}page={{ paginator.num_pages }}" class="btn btn-primary ml-1">В
+            конец &raquo;</a>
+    </form>
+    <div class="mt-2">
+        {% for page in paginator.page_range %}
+            {% if page_obj.number == page %}
+                <a class="btn btn-light ml-1 disabled">{{ page }}</a>
+            {% else %}
+                <a href="?{% if query %}{{ query }}&{% endif %}page={{ page }}">{{ page }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
