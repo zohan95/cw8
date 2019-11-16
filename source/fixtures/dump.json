@@ -1,22 +1,22 @@
 [
-{
-  "model": "webapp.product",
-  "pk": 1,
-  "fields": {
-    "name": "apple",
-    "category": "fruits",
-    "description": "asd",
-    "image": "product_images/index_GDeE04y.png"
+  {
+    "model": "webapp.product",
+    "pk": 1,
+    "fields": {
+      "name": "apple",
+      "category": "fruits",
+      "description": "asd",
+      "image": "product_images/index_GDeE04y.png"
+    }
+  },
+  {
+    "model": "webapp.review",
+    "pk": 1,
+    "fields": {
+      "author": 1,
+      "product": 1,
+      "review_text": "asdsad",
+      "mark": 5
+    }
   }
-},
-{
-  "model": "webapp.review",
-  "pk": 1,
-  "fields": {
-    "author": 1,
-    "product": 1,
-    "review_text": "asdsad",
-    "mark": 5
-  }
-}
 ]

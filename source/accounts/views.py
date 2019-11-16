@@ -57,6 +57,7 @@ class UserDetailView(DetailView):
     model = User
     template_name = 'user_detail.html'
     context_object_name = 'user_obj'
+
     def get_context_data(self, **kwargs):
         con = super().get_context_data()
         con['reviews'] = Review.objects.filter(author=self.object)
@@ -93,4 +94,3 @@ class AllUsers(ListView):
     model = User
     template_name = 'all_users.html'
     context_object_name = 'allusers'
-

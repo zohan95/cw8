@@ -12,16 +12,18 @@
         <div class="row">
             {% for product in product_list %}
                 <div class="col-md-6 col-lg-3">
-                <div class="card card-1 mt-3">
+                    <div class="card card-1 mt-3">
                         <div style="height: 200px; background-image: {% if product.image %}url({{ product.image.url }}){% else %}url({% static 'blank.png' %}){% endif %}; background-repeat: no-repeat; background-size: contain;"></div>
                         {#                    <img src="{{ product.photo.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 200px">#}
                         <div class="card-body card-content">
                             <div style="min-height: 75px;"><h5 class="card-title">{{ product.name }}</h5></div>
-                            <div style="min-height: 50px;"><p class="card-text">Категория: {{ product.get_category_display }} Средний рейтинг: {{ product.mid_rating }}</p></div>
+                            <div style="min-height: 50px;"><p class="card-text">
+                                Категория: {{ product.get_category_display }} Средний
+                                рейтинг: {{ product.mid_rating }}</p></div>
                             <a href="{% url "webapp:product_details_url" product.pk %}"
                                class="btn btn-primary">Посмотреть</a>
                         </div>
-                </div>
+                    </div>
                 </div>
             {% endfor %}
         </div>

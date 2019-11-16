@@ -21,7 +21,9 @@
     <form action="{% url 'accounts:login' %}" method="post" class="text-center">
         {% csrf_token %}
         {% if has_error %}
-            <p class="form-error" style="color: red; background-color: rgba(255,255,255,0.5); border:1px solid red; border-radius: 2px;">Неверное имя пользователя или пароль.</p>
+            <p class="form-error"
+               style="color: red; background-color: rgba(255,255,255,0.5); border:1px solid red; border-radius: 2px;">
+                Неверное имя пользователя или пароль.</p>
         {% endif %}
         <p><label for="username" class="form-label text-white font-weight-bold">Имя пользователя:</label></p>
         <p><input type="text" name="username" id="username" autofocus style="width: 300px"></p>

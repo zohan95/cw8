@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from .views import ProductList, ProductDetails, ProductEdit, ProductDelete, ProductCreate, ReviewCreate, ReviewEdit, ReviewDelete
+from .views import ProductList, ProductDetails, ProductEdit, ProductDelete, ProductCreate, ReviewCreate, ReviewEdit, \
+    ReviewDelete
 
 app_name = 'webapp'
 

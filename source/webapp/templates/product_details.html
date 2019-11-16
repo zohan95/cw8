@@ -26,23 +26,23 @@
     <div class="card-1 mt-2">
         <div class="container">
             <a href="{% url 'webapp:review_create_url' product.pk %}" class="btn btn-success">Оставить отзыв</a>
-{#            <form action="{% url 'webapp:review_create_url' product.pk %}" method="post">#}
-{#                {% csrf_token %}#}
-{##}
-{#                {% for error in form1.non_field_errors %}#}
-{#                    <p class="form-error">{{ error }}</p>#}
-{#                {% endfor %}#}
-{##}
-{#                {% for field in form1 %}#}
-{#                    <p><label for="{{ field.id_for_label }}">{{ field.label }}</label></p>#}
-{#                    <p>{{ field }}</p>#}
-{#                    {% for error in field.errors %}#}
-{#                        <p class="form-error">{{ error }}</p>#}
-{#                    {% endfor %}#}
-{#                {% endfor %}#}
-{##}
-{#                <p><input type="submit" value="Оставить отзыв"></p>#}
-{#            </form>#}
+            {#            <form action="{% url 'webapp:review_create_url' product.pk %}" method="post">#}
+            {#                {% csrf_token %}#}
+            {##}
+            {#                {% for error in form1.non_field_errors %}#}
+            {#                    <p class="form-error">{{ error }}</p>#}
+            {#                {% endfor %}#}
+            {##}
+            {#                {% for field in form1 %}#}
+            {#                    <p><label for="{{ field.id_for_label }}">{{ field.label }}</label></p>#}
+            {#                    <p>{{ field }}</p>#}
+            {#                    {% for error in field.errors %}#}
+            {#                        <p class="form-error">{{ error }}</p>#}
+            {#                    {% endfor %}#}
+            {#                {% endfor %}#}
+            {##}
+            {#                <p><input type="submit" value="Оставить отзыв"></p>#}
+            {#            </form>#}
         </div>
     </div>
     <div class="card-1 mt-3">
@@ -57,7 +57,8 @@
                     <p>TEXT: {{ i.review_text }}</p>
                     <p>MARK: {{ i.mark }}</p>
                     <a href="{% url 'webapp:review_edit_url' i.pk %}" class="btn btn-outline-secondary">edit</a>
-                    <a href="{% url 'webapp:review_delete_url' i.pk product.id %}" class="btn btn-outline-danger">delete</a>
+                    <a href="{% url 'webapp:review_delete_url' i.pk product.id %}"
+                       class="btn btn-outline-danger">delete</a>
                 </div>
             {% endfor %}
         </div>

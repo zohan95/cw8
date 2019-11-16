@@ -20,15 +20,15 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'webapp:main_url' %}">Главная</a>
                 </li>
-{#                <li class="nav-item active">#}
-{#                    <a class="nav-link" href="{% url 'webapp:status_url' %}">Статусы</a>#}
-{#                </li>#}
-{#                <li class="nav-item active">#}
-{#                    <a class="nav-link" href="{% url 'webapp:type_url' %}">Типы</a>#}
-{#                </li>#}
-{#                <li class="nav-item active">#}
-{#                    <a class="nav-link" href="{% url 'webapp:project_url' %}">Проекты</a>#}
-{#                </li>#}
+                {#                <li class="nav-item active">#}
+                {#                    <a class="nav-link" href="{% url 'webapp:status_url' %}">Статусы</a>#}
+                {#                </li>#}
+                {#                <li class="nav-item active">#}
+                {#                    <a class="nav-link" href="{% url 'webapp:type_url' %}">Типы</a>#}
+                {#                </li>#}
+                {#                <li class="nav-item active">#}
+                {#                    <a class="nav-link" href="{% url 'webapp:project_url' %}">Проекты</a>#}
+                {#                </li>#}
                 {% block menu %}
                 {% endblock %}
                 {% if user.is_authenticated %}

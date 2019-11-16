@@ -9,7 +9,7 @@ class SignUpForm(forms.Form):
                                widget=forms.PasswordInput)
     password_confirm = forms.CharField(max_length=100, required=True, label='Password confirm',
                                        widget=forms.PasswordInput)
-    email = forms.EmailField(required=True, label='Email' )
+    email = forms.EmailField(required=True, label='Email')
     first_name = forms.CharField(max_length=100, label='First name', required=False)
     second_name = forms.CharField(max_length=100, label='Second Name', required=False)
 
@@ -43,7 +43,6 @@ class SignUpForm(forms.Form):
         if password_1 != password_2:
             raise ValidationError('Passwords do not match.', code='passwords_do_not_match')
         return self.cleaned_data
-
 
 
 class UserChangeForm(forms.ModelForm):
